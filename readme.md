@@ -106,9 +106,26 @@ SP (stack pointer) est l'adresse du haut de la pile de donnée et d'appels dans 
 
 ### Vecteurs système
 
-* BC09 : Change le mode écran (A=0,1,2)
-* BB5A : affiche un caractère (A code ascii ou caractère)
-* BB75 : locate (H=colonne, L=rangée)
+* BC09 : Change le mode écran (A=0,1,2) (MODE)
+* BB5A : affiche un caractère (A code ascii ou caractère) (PRINT)
+* BB75 : positionne le curseur texte (H=colonne, L=rangée) (LOCATE)
 * BBA8 : redéfinit un caractère (A=code ascii, HL=tableau de 8 bytes)
+* BC38 : change la couleur du bord (B=couleur 1, C=couleur 2) (BORDER)
+* BC32 : définit une encre (A=numéro encre, B=couleur 1, C=couleur 2) (INK)
+* BB90 : sélectionne le stylo (A=numéro de stylo) (PEN)
+* BB96 : sélectionne la couleur du fond (A=encre) (PAPER)
+* BB6C : efface l'céran (CLS)
 
 [En savoir plus](https://www.cpc-power.com/cpcarchives/index.php?page=articles&num=150#vecteurs)
+
+---
+
+## Annexes
+
+### Palette du CPC
+
+<img src="./images/cpc_ink_numbers.png">
+
+### Jeu de caractères par défaut
+
+<img src="./images/cpc_characters_map.png">
