@@ -1,0 +1,115 @@
+; Tuto 06 - Déplacement d'un caractère joueur
+;
+    ORG #8000
+start
+
+    ; MODE 0
+    LD A, 0
+    CALL #BC0E
+
+    ; SPEEDKEY 5,3
+    LD H,5
+    LD L,3
+    CALL #BB3F
+
+    CALL showPlayer
+gameLoop
+    ; INKEY$
+    CALL #BB1B      ; place le code de la touche enfoncée dans le registre A
+
+    ; Si flèche gauche
+    CP 242
+    CALL Z,moveLeft   ; si égalité, appelle moveLeft
+
+    ; Si flèche droite
+    CP 243
+    CALL Z,moveRight
+
+    ; Si flèche haut
+    CP 240
+    CALL Z,moveUp 
+
+    ; Si flèche bas
+    CP 241
+    CALL Z,moveDown
+
+    ; FRAME
+    CALL #BB19
+
+    JP gameLoop
+    RET
+
+showPlayer
+    ; LOCATE xplayer, yplayer
+    LD A, (xplayer): LD H,A
+    LD A, (yplayer): LD L,A
+    CALL #BB75
+
+    ; PRINT CHR$(224)
+    LD A, 224
+    CALL #BB5A
+    RET
+
+removePlayer
+    ; LOCATE xplayer, yplayer
+    LD A, (xplayer): LD H,A
+    LD A, (yplayer): LD L,A
+    CALL #BB75
+
+    ; PRINT " "
+    LD A, " "
+    CALL #BB5A
+    RET
+
+moveLeft
+    ; diminue xplayer si > 1
+    CALL removePlayer
+    LD A, (xplayer)
+    CP 1
+    JP Z, skipMoveLeft
+    DEC A
+skipMoveLeft
+    LD (xplayer), A
+    CALL showPlayer
+    RET
+
+moveRight
+    ; augmente xplayer si < 20
+    CALL removePlayer
+    LD A, (xplayer)
+    CP 20
+    JP Z,skipMoveRight
+    INC A
+skipMoveRight
+    LD (xplayer), A
+    CALL showPlayer
+    RET
+
+moveUp
+    ; diminue yplayer si > 1
+    CALL removePlayer
+    LD A, (yplayer)
+    CP 1
+    JP Z, skipMoveUp
+    DEC A
+skipMoveUp
+    LD (yplayer), A
+    CALL showPlayer
+    RET
+
+moveDown
+    ; augmente yplayer si < 25
+    CALL removePlayer
+    LD A, (yplayer)
+    CP 25
+    JP Z,skipMoveDown
+    INC A
+skipMoveDown
+    LD (yplayer), A
+    CALL showPlayer
+    RET
+
+xplayer DB 10
+yplayer DB 12
+
+save "tuto06.bin", start, $-start

@@ -8,6 +8,7 @@
 * tuto03.asm - Afficher un caractère ou un texte
 * tuto04.asm - Placer et redéfinir un caractère
 * tuto05.asm - Gestion des couleurs
+* tuto06.asm - Déplacement d'un caractère joueur
 * sphere3d.asm - Démo 1
 
 ---
@@ -130,6 +131,9 @@ SP (stack pointer) est l'adresse du haut de la pile de donnée et d'appels dans 
 * BB90 : sélectionne le stylo (A=numéro de stylo) (PEN)
 * BB96 : sélectionne la couleur du fond (A=encre) (PAPER)
 * BB6C : efface l'céran (CLS)
+* BB1B : teste si une touche est pressé (CARRY à 1 et A=code touche)
+* BB3F : délais de répétition du clavier (H=temps aavnt 1ère répétition, L=vitesse de répétition, 50 pour 1 seconde) (SPEEDKEY)
+* BD19 : synchronisation avec le CRTC (FRAME)
 
 [En savoir plus](https://www.cpc-power.com/cpcarchives/index.php?page=articles&num=150#vecteurs)
 

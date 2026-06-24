@@ -1,3 +1,3 @@
 10 MEMORY &7FFF
-20 LOAD "tuto05.bin",&8000
+20 LOAD "tuto06.bin",&8000
 30 CALL &8000
