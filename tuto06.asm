@@ -19,19 +19,19 @@ gameLoop
 
     ; Si flèche gauche
     CP 242
-    CALL Z,moveLeft   ; si égalité, appelle moveLeft
+    JP Z,moveLeft   ; si égalité, appelle moveLeft
 
     ; Si flèche droite
     CP 243
-    CALL Z,moveRight
+    JP Z,moveRight
 
     ; Si flèche haut
     CP 240
-    CALL Z,moveUp 
+    JP Z,moveUp 
 
     ; Si flèche bas
     CP 241
-    CALL Z,moveDown
+    JP Z,moveDown
 
     ; FRAME
     CALL #BB19
@@ -68,10 +68,10 @@ moveLeft
     CP 1
     JP Z, skipMoveLeft
     DEC A
-skipMoveLeft
     LD (xplayer), A
+skipMoveLeft
     CALL showPlayer
-    RET
+    JP gameLoop
 
 moveRight
     ; augmente xplayer si < 20
@@ -80,10 +80,10 @@ moveRight
     CP 20
     JP Z,skipMoveRight
     INC A
-skipMoveRight
     LD (xplayer), A
+skipMoveRight
     CALL showPlayer
-    RET
+    JP gameLoop
 
 moveUp
     ; diminue yplayer si > 1
@@ -92,10 +92,10 @@ moveUp
     CP 1
     JP Z, skipMoveUp
     DEC A
-skipMoveUp
     LD (yplayer), A
+skipMoveUp
     CALL showPlayer
-    RET
+    JP gameLoop
 
 moveDown
     ; augmente yplayer si < 25
@@ -104,10 +104,10 @@ moveDown
     CP 25
     JP Z,skipMoveDown
     INC A
-skipMoveDown
     LD (yplayer), A
+skipMoveDown
     CALL showPlayer
-    RET
+    JP gameLoop
 
 xplayer DB 10
 yplayer DB 12
