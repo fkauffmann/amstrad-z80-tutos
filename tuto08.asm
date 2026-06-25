@@ -1,4 +1,4 @@
-; Tuto 07 - Détection des collisions et découverte de push/pop
+; Tuto 08 - IA des ennemis
 ;
     ORG #8000
 start
@@ -22,6 +22,7 @@ start
     CALL showKey
     CALL showBonus
 gameLoop
+
     ; INKEY$
     CALL #BB1B      ; place le code de la touche enfoncée dans le registre A
 
@@ -41,8 +42,11 @@ gameLoop
     CP 241
     JP Z,moveDown
 
+    CALL updateEnemy
+
     ; FRAME
-    CALL #BB19
+    CALL pause
+
 
     JP gameLoop
     RET
@@ -53,7 +57,6 @@ showPlayer
     LD A, (yplayer): LD L,A
     PUSH HL                 ; sauvegarde les coordonnées sur la pile
     CALL #BB75
-
 
     ; COPYCHR$
     CALL #BB60
@@ -129,15 +132,88 @@ skipMoveDown
 ; ---------------------------------------------------------
 showEnemy
     ; LOCATE xenemy, yenemy
+    LD A, (xenemy)
+    LD H,A
+    LD A, (yenemy)
+    LD L,A
+    PUSH HL
+    CALL #BB75    
+
+    CALL #BB60          ; teste si caractère sous le curseur
+    CALL C, testDamage
+
+    POP HL
+    CALL #BB75    
+
+    ; PRINT CHR$(225)
+    LD A, 225
+    CALL #BB5A
+    RET
+; ---------------------------------------------------------
+testDamage
+    CP 224
+    CALL Z, showCollision
+
+    CP 225
+    CALL Z, showCollision    
+
+    CP 228
+    CALL Z, showCollision    
+
+    CP 253
+    CALL Z, showCollision    
+    RET
+; ---------------------------------------------------------
+eraseEnemy
+    ; LOCATE xenemy, yenemy
     LD A, (xenemy): LD H,A
     LD A, (yenemy): LD L,A
     CALL #BB75    
     LD A, 253
 
     ; PRINT CHR$(225)
-    LD A, 225
+    LD A, 32                    ; espace
     CALL #BB5A
     RET
+; ---------------------------------------------------------
+updateEnemy
+    CALL eraseEnemy
+    LD A, (direction)
+    CP "R"
+    JP Z, moveEnemyRight
+moveEnemyLeft
+    ; Si ennemi va vers la gauche    
+    LD A, (xenemy)
+    CP 2
+    CALL Z, changeEnemyDirectionRight
+    DEC A
+    JP updateEnemyPosition
+moveEnemyRight
+    ; Si ennemi va vers la droite
+    LD A, (xenemy)
+    CP 19
+    CALL Z, changeEnemyDirectionLeft
+    INC A
+updateEnemyPosition
+    LD (xenemy), A
+    CALL showEnemy
+    RET
+; ---------------------------------------------------------
+
+changeEnemyDirectionRight
+    PUSH AF
+    LD A,"R"
+    LD (direction), A
+    POP AF
+    RET
+; ---------------------------------------------------------
+changeEnemyDirectionLeft
+    PUSH AF
+    LD A,"L"
+    LD (direction), A
+    POP AF
+    RET
+
 ; ---------------------------------------------------------
 showBonus
     ; LOCATE
@@ -148,7 +224,7 @@ showBonus
     ; PRINT
     LD A, 228
     CALL #BB5A
-    RET
+RET
 ; ---------------------------------------------------------
 showKey
     ; LOCATE
@@ -159,7 +235,7 @@ showKey
     ; PRINT
     LD A, 253
     CALL #BB5A
-    RET
+RET
 ; ---------------------------------------------------------
 detectCollision
     ; Le registre A contient le code ASCII du caractère
@@ -173,7 +249,7 @@ detectCollision
     CP 253                      ; clé
     CALL Z, showCollision
 
-    RET
+RET
 ; ---------------------------------------------------------
 showCollision
     PUSH AF                     ; sauvegarde A qui est écrasé par CALL #BB75
@@ -187,14 +263,22 @@ showCollision
 
     ; PRINT caractère détecté par detectCollision
     CALL #BB5A  
+RET
+; ---------------------------------------------------------
+pause
+    LD B,10
+    LOOP
+        HALT
+    DJNZ LOOP
     RET
 ; ---------------------------------------------------------
 
 xplayer DB 10
 yplayer DB 12
 
-xenemy DB 15
-yenemy DB 10
+xenemy DB 10
+yenemy DB 7
+direction DB "R"    ; (L)eft or (R)ight
 
 xbonus DB 5
 ybonus DB 5
@@ -204,4 +288,4 @@ ykey DB 5
 
 key DB 0,64,160,191,165,69,0,0
 
-save "tuto07.bin", start, $-start
+save "tuto08.bin", start, $-start

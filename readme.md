@@ -11,6 +11,7 @@
 * tuto05.asm - Gestion des couleurs
 * tuto06.asm - Déplacement d'un caractère joueur
 * Tuto07.asm - Détection des colisions + push & pop
+* tuto08.asm - IA des ennemis
 * sphere3d.asm - Démo sphère 3d en rotation
 
 ---
@@ -125,6 +126,9 @@ SP (stack pointer) est l'adresse du haut de la pile de donnée et d'appels dans 
 - JP Z : saut si Z=1 (égalité)
 - INC : incrémente
 - DEC : décrémente
+- CALL : appelle une procédure
+- LOOP DJNZ : décrémente B et quitte si 0
+- HALT : suspend l'exécution du processeur tout en attendant qu'une interruption (IRQ) survienne
 
 ### Vecteurs système
 
