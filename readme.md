@@ -9,6 +9,7 @@
 * tuto04.asm - Placer et redéfinir un caractère
 * tuto05.asm - Gestion des couleurs
 * tuto06.asm - Déplacement d'un caractère joueur
+* Tuto07.asm - Détection des colisions + push & pop
 * sphere3d.asm - Démo 1
 
 ---
@@ -117,8 +118,12 @@ SP (stack pointer) est l'adresse du haut de la pile de donnée et d'appels dans 
 ### Instructions
 
 * LD : charge un registre
-* RET : rend la main
+* RET : rend la main à la routine appelante
 * CP : compare A avec la valeur passée
+- JP : saut explicite
+- JP Z : saut si Z=1 (égalité)
+- INC : incrémente
+- DEC : décrémente
 
 ### Vecteurs système
 
@@ -134,6 +139,7 @@ SP (stack pointer) est l'adresse du haut de la pile de donnée et d'appels dans 
 * BB1B : teste si une touche est pressé (CARRY à 1 et A=code touche)
 * BB3F : délais de répétition du clavier (H=temps aavnt 1ère répétition, L=vitesse de répétition, 50 pour 1 seconde) (SPEEDKEY)
 * BD19 : synchronisation avec le CRTC (FRAME)
+* BB60 : lit le caractère à la position du curseur (CARRY=1 si détection et A=code ascii) (COPYCHR$)
 
 [En savoir plus](https://www.cpc-power.com/cpcarchives/index.php?page=articles&num=150#vecteurs)
 

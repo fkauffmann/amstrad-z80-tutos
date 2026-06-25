@@ -1,7 +1,7 @@
 #!/bin/sh
 clear
 
-ASM=tuto06
+ASM=tuto07
 LDR=loader
 DSK=z80tutos
 
