@@ -1,7 +1,8 @@
-# Tutorial Assembleur Z80 pour Amstrad CPC
+# Apprendre l'Assembleur Z80 pour Amstrad CPC 6128
 
-## Table des matières
+<img src="./images/amstrad-cpc-6128.gif">
 
+## Index des tutos
 
 * tuto01.asm - Hello world
 * tuto02.asm - Changer le mode d'écran
@@ -10,7 +11,7 @@
 * tuto05.asm - Gestion des couleurs
 * tuto06.asm - Déplacement d'un caractère joueur
 * Tuto07.asm - Détection des colisions + push & pop
-* sphere3d.asm - Démo 1
+* sphere3d.asm - Démo sphère 3d en rotation
 
 ---
 
