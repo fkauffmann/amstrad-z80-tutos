@@ -10,8 +10,9 @@
 * tuto04.asm - Placer et redéfinir un caractère
 * tuto05.asm - Gestion des couleurs
 * tuto06.asm - Déplacement d'un caractère joueur
-* Tuto07.asm - Détection des colisions + push & pop
+* tuto07.asm - Détection des colisions + push & pop
 * tuto08.asm - IA des ennemis
+* tuto09.asm - Affiche un nombre entier 16 bits non-signé
 * sphere3d.asm - Démo sphère 3d en rotation
 
 ---
@@ -122,13 +123,18 @@ SP (stack pointer) est l'adresse du haut de la pile de donnée et d'appels dans 
 * LD : charge un registre
 * RET : rend la main à la routine appelante
 * CP : compare A avec la valeur passée
-- JP : saut explicite
-- JP Z : saut si Z=1 (égalité)
-- INC : incrémente
-- DEC : décrémente
-- CALL : appelle une procédure
-- LOOP DJNZ : décrémente B et quitte si 0
-- HALT : suspend l'exécution du processeur tout en attendant qu'une interruption (IRQ) survienne
+* JP : saut explicite
+* JP Z : saut si Z=1 (égalité)
+* INC : incrémente
+* DEC : décrémente
+* CALL : appelle une procédure
+* LOOP DJNZ : décrémente B et quitte si 0
+* HALT : suspend l'exécution du processeur tout en attendant qu'une interruption (IRQ) survienne
+* DB : déclare un byte
+* DW : déclare un word
+* SBC : soustraction avec gestion de la retenue (CARRY)
+* ADC : addition avec CARRY
+* JR NC: saut relatif si pas de CARRY
 
 ### Vecteurs système
 
