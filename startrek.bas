@@ -1,0 +1,3 @@
+10 MEMORY &17FF
+20 LOAD "scrswap.bin",&1800
+30 CALL &1800

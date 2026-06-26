@@ -2,20 +2,23 @@
 
 <img src="./images/amstrad-cpc-6128.gif">
 
-## Index des tutos
+## Index des tutoriaux
 
-* tuto01.asm - Hello world
-* tuto02.asm - Changer le mode d'écran
-* tuto03.asm - Afficher un caractère ou un texte
-* tuto04.asm - Placer et redéfinir un caractère
-* tuto05.asm - Gestion des couleurs
-* tuto06.asm - Déplacement d'un caractère joueur
-* tuto07.asm - Détection des colisions + push & pop
-* tuto08.asm - IA des ennemis
-* tuto09.asm - Affiche un nombre entier 16 bits non-signé
-* sphere3d.asm - Démo sphère 3d en rotation
+| Programme | Description |
+| --------- | ----------- |
+| tuto01.asm | Hello world |
+| tuto02.asm | Changer le mode d'écran |
+| tuto03.asm | Afficher un caractère ou un texte |
+| tuto04.asm | Placer et redéfinir un caractère |
+| tuto05.asm | Gestion des couleurs |
+| tuto06.asm | Déplacement d'un caractère joueur |
+| tuto07.asm | Détection des colisions + push & pop |
+| tuto08.asm | IA des ennemis |
+| tuto09.asm | Affiche un nombre entier 16 bits non-signé |
+| print.asm | Implémentation de PrintString et NewLine
+| scrswap.asm | Copie de zones mémoires vers l'écran |
+| sphere3d.asm | Démo sphère 3d en rotation |
 
----
 
 ## Introduction
 

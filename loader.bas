@@ -1,3 +1,3 @@
 10 MEMORY &7FFF
-20 LOAD "tuto09.bin",&8000
+20 LOAD "print.bin",&8000
 30 CALL &8000

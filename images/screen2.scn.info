@@ -1,0 +1,29 @@
+FILE: ./images/screen2.scn
+WIDTH: 320
+HEIGHT: 200
+MODE: 1
+PALETTE COLORS: 4
+
+FW		HW		RGB
+0		0x14	(0, 0, 0)
+13		0x00	(128, 128, 128)
+26		0x0B	(255, 255, 255)
+24		0x0A	(255, 255, 0)
+
+; ASM HW palette
+db 0x14, 0x00, 0x0B, 0x0A
+; ASM FW palette
+db 0, 13, 26, 24
+
+' BAS palette
+INK 0,0: INK 1,13: INK 2,26: INK 3,24
+
+// C HW palette
+hwpal = { 0x14, 0x00, 0x0B, 0x0A }
+// C FW palette
+fwpal = { 0x00, 0x0D, 0x1A, 0x18 }
+
+# Python HW palette
+{ 'type': 'HW', 'pal': [0x14, 0x00, 0x0B, 0x0A]}
+# Python FW palette
+{ 'type': 'FW', 'pal': [0, 13, 26, 24]}

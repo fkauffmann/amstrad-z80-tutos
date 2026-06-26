@@ -1,11 +1,11 @@
 #!/bin/sh
 clear
 
-ASM=tuto09
-LDR=loader
+ASM=scrswap
+LDR=startrek
 DSK=z80tutos
 
-./../../rasm/rasm.exe $ASM.asm
+./../../rasm/rasm.exe -amper $ASM.asm
 
 if [ -f "$ASM.bin" ]; then
     iDSK $DSK.dsk -n
@@ -14,7 +14,7 @@ if [ -f "$ASM.bin" ]; then
     
     rm -f $ASM.bin
     
-    caprice32.launcher $DSK.dsk --autocmd=run\"loader
+    caprice32.launcher $DSK.dsk --autocmd=run\"$LDR.bas
 else
     echo "❌ Compilation failed"
 fi
