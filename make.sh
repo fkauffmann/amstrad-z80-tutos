@@ -1,8 +1,8 @@
 #!/bin/sh
 clear
 
-ASM=scrswap
-LDR=startrek
+ASM=tuto10
+LDR=loader
 DSK=z80tutos
 
 ./../../rasm/rasm.exe -amper $ASM.asm

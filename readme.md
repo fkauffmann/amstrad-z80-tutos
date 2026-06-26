@@ -15,9 +15,14 @@
 | tuto07.asm | Détection des colisions + push & pop |
 | tuto08.asm | IA des ennemis |
 | tuto09.asm | Affiche un nombre entier 16 bits non-signé |
-| print.asm | Implémentation de PrintString et NewLine
+| tuto10.asm | Multiplcation rapide d'un registre 16 bits par 10 |
+
+## Index des démos
+| Programme | Description |
+| --------- | ----------- |
+| print.asm | Implémentation de PrintString et NewLine |
 | scrswap.asm | Copie de zones mémoires vers l'écran |
-| sphere3d.asm | Démo sphère 3d en rotation |
+| sphere3d.asm | Démo sphère 3D en rotation |
 
 
 ## Introduction
