@@ -1,3 +1,3 @@
-10 MEMORY &17FF
-20 LOAD "scrswap.bin",&1800
-30 CALL &1800
+10 MEMORY &1FFF
+20 LOAD "scrswap.bin",&2000
+30 CALL &2000

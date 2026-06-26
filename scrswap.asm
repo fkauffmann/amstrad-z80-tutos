@@ -1,6 +1,6 @@
 ; memcopy : Charge deux écrans en mémoire et les affiche en alternance
 ;
-org #1800         ; on veut mettre notre programme au début de la mémoire
+org #2000         ; on veut mettre notre programme au début de la mémoire
 
 Start
     ld a, 1         ; mode 1
@@ -67,8 +67,8 @@ WaitKey
     call &BB06
     ret
 ; ---------------------------------------------------------
-org #2000 : page1 incbin 'screen1.scn'
-org #6000 : page2 incbin 'screen2.scn'
+org #267B : page1 incbin 'screen1.scn'
+org #667B : page2 incbin 'screen2.scn'
 
 save "scrswap.bin", Start, $-Start
 
