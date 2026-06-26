@@ -159,6 +159,8 @@ SP (stack pointer) est l'adresse du haut de la pile de donnée et d'appels dans 
 * BB3F : délais de répétition du clavier (H=temps aavnt 1ère répétition, L=vitesse de répétition, 50 pour 1 seconde) (SPEEDKEY)
 * BD19 : synchronisation avec le CRTC (FRAME)
 * BB60 : lit le caractère à la position du curseur (CARRY=1 si détection et A=code ascii) (COPYCHR$)
+* BC26 : calcule l'adresse réelle de l'octet situé sous celui dont on passe l'adresse
+* BC1D : calcule l'adresse réelle d'un point graphique en fonction de ses coordonnées
 
 [En savoir plus](https://www.cpc-power.com/cpcarchives/index.php?page=articles&num=150#vecteurs)
 
@@ -169,6 +171,39 @@ SP (stack pointer) est l'adresse du haut de la pile de donnée et d'appels dans 
 ### Palette du CPC
 
 <img src="./images/cpc_ink_numbers.png">
+
+### Structure de la mémoire écran
+
+La taille de la mémoire graphique, fait 16 ko. Chaque ligne est entrelacée avec les autres et la largeur d'une ligne fait 80 caractères (octets).
+
+<img src="./images/screen-memory-blocks.png">
+
+Pour passer de la ligne 0 à la ligne 1 on ajoute &800 à l'adresse de base.
+
+Pour passer de la ligne 0 à la ligne 8 on ajoute &50. 
+
+Les lignes sont regroupées par série de 8 lignes consécutives. A chaque nouvelle série de lignes on ajoute &50 à l'adresse vidéo, de base (&C000 dans notre exemple). 
+
+Pourquoi &50 ? Tout simplement parce que la largeur de chaque ligne fait 80 octets (&50). 
+
+### Entrelacement des pixels en mode 0
+
+<img src="./images/mode0.png">
+
+La couleur du premier pixel est codée sur les bits 7,5,3,1 et celle du second pixel sur les bits 6,4,2,0.
+
+### Entrelacement des pixels en mode 1
+
+L'entrelacement de pixel est similaire à celui du Mode 0 à ceci près que chaque pixel n'est plus codé sur 4 bits.
+
+<img src="./images/mode0.png">
+
+### Entrelacement des pixels en mode 2
+
+Chaque bit d'un octet correspond à 1 pixel, donc 8 pixels par octet.
+
+<img src="./images/mode0.png">
+
 
 ### Jeu de caractères par défaut
 

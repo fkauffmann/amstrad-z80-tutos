@@ -1,7 +1,7 @@
 #!/bin/sh
 clear
 
-ASM=tuto10
+ASM=sprite01
 LDR=loader
 DSK=z80tutos
 
