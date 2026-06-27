@@ -31,7 +31,7 @@
 
 Après avoir essayé ugBasic et CPCTelera pour faire du rétrocoding sur Amstrad CPC 6128, ma conclusion est sans appel. Rien ne peut approcher les performances de l'assembleur Z80 sur cette machine des années 80.
 
-<img src="./images/z80.jpg">
+<img src="./images/z80.jpg" width=460>
 
 J'ai donc décidé de commencer mon propre tutorial sur base de ce que j'ai pu découvrir sur le web.
 
@@ -39,7 +39,7 @@ Merci à Yreggor, Ldir_Hector, roudodou et BDC Iron pour leurs formidables quali
 
 En plus de mes exercices, vous trouverez dans ce repo un fichier DSK avec ma première démo en assembleur : Sphere3D.
 
-<img src="./images/sphere3d.png">
+<img src="./images/sphere3d.png " width=460>
 
 Bonne découverte !
 
@@ -48,8 +48,10 @@ Bonne découverte !
 
 ## Prérequis sous Ubuntu 25.x
 
-* iDSK [Télécharger et compiler](https://github.com/fkauffmann/tutos-cpc-basic)
-* RASM [Télécharger et compiler](https://github.com/EdouardBERGE/rasm)
+* iDSK [Download](https://github.com/fkauffmann/tutos-cpc-basic)
+* RASM [Download](https://github.com/EdouardBERGE/rasm)
+
+* ABASC et ses outils [Download](https://github.com/fragarco/abasc)
 * Caprice32 (Package Snap dans App Center)
 
 ## Organisation de la RAM du CPC (premiers 64Kb)
