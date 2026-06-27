@@ -20,6 +20,8 @@
 ## Index des démos
 | Programme | Description |
 | --------- | ----------- |
+| sprite01.asm | Un sprite simple 8x8 en mode 1 |
+| sprite02.asm | Un sprite 48x48 en mode 1 chargé à partir d'un BIN |
 | print.asm | Implémentation de PrintString et NewLine |
 | scrswap.asm | Copie de zones mémoires vers l'écran |
 | sphere3d.asm | Démo sphère 3D en rotation |

@@ -1,0 +1,29 @@
+FILE: ./images/akuna.bin
+WIDTH: 48
+HEIGHT: 48
+MODE: 1
+PALETTE COLORS: 4
+
+FW		HW		RGB
+0		0x14	(0, 0, 0)
+14		0x1F	(128, 128, 255)
+7		0x05	(255, 0, 128)
+20		0x13	(0, 255, 255)
+
+; ASM HW palette
+db 0x14, 0x1F, 0x05, 0x13
+; ASM FW palette
+db 0, 14, 7, 20
+
+' BAS palette
+INK 0,0: INK 1,14: INK 2,7: INK 3,20
+
+// C HW palette
+hwpal = { 0x14, 0x1F, 0x05, 0x13 }
+// C FW palette
+fwpal = { 0x00, 0x0E, 0x07, 0x14 }
+
+# Python HW palette
+{ 'type': 'HW', 'pal': [0x14, 0x1F, 0x05, 0x13]}
+# Python FW palette
+{ 'type': 'FW', 'pal': [0, 14, 7, 20]}

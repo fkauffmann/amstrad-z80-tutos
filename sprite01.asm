@@ -1,3 +1,6 @@
+; Affiche un sprite 8x8 en mode 1    
+; Voir readme.md pour l'organisation de la mémoire écran et l'interlacement des couleurs
+;
     org #8000
 Start
     ld a,1          ; mode 1

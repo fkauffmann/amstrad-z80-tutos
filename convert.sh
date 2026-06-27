@@ -8,5 +8,7 @@
 python3 ../../abasc-1.2.1/src/utils/img.py ./images/screen1.gif --format scn --mode 1
 python3 ../../abasc-1.2.1/src/utils/img.py ./images/screen2.gif --format scn --mode 1
 
-mv ./images/screen1.scn .
-mv ./images/screen2.scn .
+python3 ../../abasc-1.2.1/src/utils/img.py ./images/akuna.gif --format bin --mode 1
+
+mv ./images/*.scn .
+mv ./images/*.bin .

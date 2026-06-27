@@ -1,3 +1,3 @@
 10 MEMORY &7FFF
-20 LOAD "sprite01.bin",&8000
+20 LOAD "sprite02.bin",&8000
 30 CALL &8000
