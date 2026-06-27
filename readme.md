@@ -14,8 +14,9 @@
 | tuto06.asm | Déplacement d'un caractère joueur |
 | tuto07.asm | Détection des colisions + push & pop |
 | tuto08.asm | IA des ennemis |
-| tuto09.asm | Affiche un nombre entier 16 bits non-signé |
+| tuto09.asm | Afficher un nombre entier 16 bits non-signé |
 | tuto10.asm | Multiplcation rapide d'un registre 16 bits par 10 |
+| tuto11.asm | Afficher un point en mode 1 |
 
 ## Index des démos
 | Programme | Description |
