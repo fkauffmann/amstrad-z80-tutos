@@ -1,4 +1,6 @@
 10 MEMORY &6FFF
-15 MODE 0
-20 LOAD "fastdraw.bin",&7000
-30 CALL &7000, 0,0,159,199
+20 MODE 0
+30 LOAD "fastdraw.bin",&7000
+40 ink 4,17
+50 poke &B6A3,48
+60 CALL &7000, 0,0,159,199
