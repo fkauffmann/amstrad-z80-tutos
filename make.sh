@@ -1,8 +1,8 @@
 #!/bin/sh
 clear
 
-ASM=tuto11
-LDR=loader
+ASM=fastdraw
+LDR=fastdraw
 DSK=z80tutos
 
 ./../../rasm/rasm.exe -amper $ASM.asm

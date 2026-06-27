@@ -1,0 +1,4 @@
+10 MEMORY &6FFF
+15 MODE 0
+20 LOAD "fastdraw.bin",&7000
+30 CALL &7000, 0,0,159,199
