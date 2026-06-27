@@ -45,7 +45,6 @@ Bonne découverte !
 
 ---
 
-
 ## Prérequis sous Ubuntu 25.x
 
 * iDSK [Download](https://github.com/fkauffmann/tutos-cpc-basic)
